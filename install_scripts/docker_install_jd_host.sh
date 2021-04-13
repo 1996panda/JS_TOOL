@@ -229,6 +229,7 @@ docker run -dit \
     -p $PanelPort:5678 \
     --name $ContainerName \
     --hostname jd \
+    --network host \
     --restart always \
     $DockerImage
 
