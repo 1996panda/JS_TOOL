@@ -123,6 +123,22 @@ Input_PanelPort() {
 }
 Input_PanelPort
 
+
+
+# 输入端口号
+Input_NotworkType() {
+    echo -n -e "\n\e[33m请输入docker网络模式\n1) brindge[默认]\n2) host\e[0m"
+    read NotworkType
+    if [ -z "$NotworkType" ]; then
+        NotworkType="bridge"
+    else
+        NotworkType="host"
+    fi
+}
+Input_NotworkType
+
+
+
 # 配置文件目录
 
 Need_ConfigDir() {
@@ -229,7 +245,7 @@ docker run -dit \
     -p $PanelPort:5678 \
     --name $ContainerName \
     --hostname jd \
-    --network host \
+    --network $NotworkType \
     --restart always \
     $DockerImage
 
