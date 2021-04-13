@@ -37,10 +37,8 @@ warn() {
 }
 
 HasImage=true
-Choose_GetImageType
 DelContainer=true
 ContainerName="jd"
-Check_ContainerName
 PanelPort="5678"
 NeedDirConfig=''
 NeedDirLog=''
